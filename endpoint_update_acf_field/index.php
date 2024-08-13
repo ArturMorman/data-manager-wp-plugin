@@ -22,7 +22,10 @@ class AmorUpdateACF
 
     if ($post_id && !empty($fields)) {
       foreach ($fields as $field_key => $value) {
-        update_field($field_key, $value, $post_id);
+
+        $sanitized_value = is_array($value) ? array_map('sanitize_text_field', $value) : wp_kses_post($value);
+        
+        update_field($field_key, $sanitized_value, $post_id);
       }
       return new WP_REST_Response('Fields updated', 200);
     }

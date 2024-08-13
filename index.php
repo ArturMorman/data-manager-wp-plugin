@@ -79,6 +79,9 @@ function amor_allowed_acf_fields_for_c_editor() {
 ////	POST TYPES AND TAXONOMIES
 require_once(plugin_dir_path(__FILE__) . 'post_types_and_taxonomies/index.php');
 
+////	SANITIZE DEFAULT WP REST API
+require_once(plugin_dir_path(__FILE__) . 'sanitize_def_rest_api/index.php');
+
 ////	JWT TOKENS FORMALITIES
 require_once(plugin_dir_path(__FILE__) . 'jwt_tokens_formalities/index.php');
 
